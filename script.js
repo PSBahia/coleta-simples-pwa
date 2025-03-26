@@ -42,3 +42,10 @@ function hideInstallButton() {
         installButton.style.display = 'none';
     }
 }
+
+// Chama showInstallButton() quando a página é carregada
+window.addEventListener('load', () => {
+    if (deferredPrompt) {
+        showInstallButton();
+    }
+});
