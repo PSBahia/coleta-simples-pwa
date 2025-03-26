@@ -9,3 +9,36 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    showInstallButton();
+});
+
+function showInstallButton() {
+    const installButton = document.createElement('button');
+    installButton.textContent = 'Instalar App';
+    installButton.addEventListener('click', () => {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('Usuário instalou o app');
+            } else {
+                console.log('Usuário cancelou a instalação');
+            }
+            deferredPrompt = null;
+            hideInstallButton();
+        });
+    });
+    document.body.appendChild(installButton);
+}
+
+function hideInstallButton() {
+    const installButton = document.querySelector('button');
+    if (installButton) {
+        installButton.style.display = 'none';
+    }
+}

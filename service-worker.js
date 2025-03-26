@@ -3,7 +3,12 @@ const assetsToCache = [
     '/',
     '/index.html',
     '/style.css',
-    '/manifest.json'
+    '/script.js',
+    '/manifest.json',
+    '/dados.html',
+    '/dados.js',
+    '/icons/manifest-icon-192.maskable.png',
+    '/icons/manifest-icon-512.maskable.png'
 ];
 
 self.addEventListener('install', event => {
