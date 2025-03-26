@@ -1,0 +1,80 @@
+.container {
+    padding: 20px;
+}
+.item {
+    border: 1px solid #4f504f;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.button {
+    background-color: #3643cf;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+.input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 6px;
+    margin-bottom: 10px;
+    width: auto;
+    font-size: 15px;
+    min-width: 49%;
+}
+.filtros {
+    margin-bottom: 20px;
+}
+.conjunto {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 0;
+    padding: auto;
+}
+.botaomanipulacao {
+    background-color: #3643cf;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: auto;
+    min-width: 50%;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+.btn2 {
+    padding: 6px;
+    width: auto;
+    background-color: transparent;
+    border-radius: 6px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border: 1px solid #2b5eb7;
+    color: #2b5eb7;
+    cursor: pointer;
+}
+select {
+    width: 40%;
+    border: 1px solid #ccc;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Dados</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="filtros">
+            <div class="conjunto">
+                <input type="text" id="localidadeFilter" placeholder="Localidade" class="input">
+                <input type="text" id="quarteiraoFilter" placeholder="Quarteirão" class="input">
+            </div>
+            <div class="conjunto">
+                <p>Tipo de Imóvel:</p>
+                <select id="tipoImovelFilter">
+                    <option value="">Todos</option>
+                    <option value="R">Residência</option>
+                    <option value="C">Comércio</option>
+                    <option value="TB">Terreno Baldio</option>
+                    <option value="PE">Ponto Estratégico</option>
+                    <option value="O">Outros</option>
+                </select>
+            </div>
+            <div class="conjunto">
+                <p>Tipo de Visita:</p>
+                <select id="tipoVisitaFilter">
+                    <option value="">Todos</option>
+                    <option value="F">Pendente</option>
+                    <option value="N">Normal</option>
+                    <option value="R">Recuperada</option>
+                </select>
+            </div>
+            <div class="conjunto">
+                <input type="date" id="dataInicialFilter" class="btn2">
+                <input type="date" id="dataFinalFilter" class="btn2">
+            </div>
+            <div class="">
+                <button class="botaomanipulacao" onclick="aplicarFiltros()">Filtrar</button>
+                <button class="botaomanipulacao" onclick="limparFiltros()">Limpar Filtro</button>
+            </div>
+        </div>
+        <table id="dadosTable">
+            <thead>
+                <tr>
+                    <th>Localidade</th>
+                    <th>Data</th>
+                    <th>Quarteirão</th>
+                    <th>Rua</th>
+                    <th>Número</th>
+                    <th>Tipo de Imóvel</th>
+                    <th>Tipo de Visita</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="conjunto">
+            <input type="text" id="nomeResponsavel" placeholder="Nome do Responsável" class="input">
+            <button class="botaomanipulacao" onclick="gerarPdf()">Gerar PDF</button>
+        </div>
+        <a href="../coleta-dados/index.html" class="btn2">Cadastrar Novo Imóvel</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
