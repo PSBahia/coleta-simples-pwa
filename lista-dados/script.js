@@ -75,6 +75,7 @@ function gerarPdf() {
         return;
     }
 
+    const dadosCheckin = JSON.parse(localStorage.getItem('dadosCheckin'));
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     let y = 20;
@@ -99,8 +100,17 @@ function gerarPdf() {
         startY: y + 10,
     });
 
+    y = doc.autoTable.previous.finalY + 20; // Ajusta a posição Y para o link
+
+    if (dadosCheckin) {
+        doc.text(`Localização do Check-in:`, 10, y);
+        doc.text(dadosCheckin.gmapsLink, 10, y + 10, {
+            link: dadosCheckin.gmapsLink,
+            textColor: [0, 0, 255] // Azul para links
+        });
+    }
+
     doc.save('dados-coletados.pdf');
 }
-
 
 aplicarFiltros(); // Renderiza a tabela com os dados iniciais

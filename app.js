@@ -46,3 +46,39 @@ window.addEventListener('appinstalled', () => {
     installButton.style.display = 'none'; // Oculta o botão após a instalação
   }
 });
+
+// app.js
+
+const checkinButton = document.getElementById('checkinButton');
+
+checkinButton.addEventListener('click', () => {
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const dataAtual = new Date();
+                const dataFormatada = dataAtual.toLocaleString();
+
+                const gmapsLink = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+
+                const dadosCheckin = {
+                    latitude: latitude,
+                    longitude: longitude,
+                    data: dataFormatada,
+                    gmapsLink: gmapsLink
+                };
+
+                // Armazena os dados no localStorage
+                localStorage.setItem('dadosCheckin', JSON.stringify(dadosCheckin));
+
+                alert(`Check-in realizado em ${dataFormatada}! Localização: ${gmapsLink}`);
+            },
+            (error) => {
+                alert('Erro ao obter localização: ' + error.message);
+            }
+        );
+    } else {
+        alert('Geolocalização não suportada neste navegador.');
+    }
+});
