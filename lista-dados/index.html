@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Lista de Dados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
@@ -42,6 +43,7 @@
                 <button class="botaomanipulacao" onclick="limparFiltros()">Limpar Filtro</button>
             </div>
         </div>
+        <div class="table-container">
         <table id="dadosTable">
             <thead>
                 <tr>
@@ -57,6 +59,7 @@
             </thead>
             <tbody></tbody>
         </table>
+        </div>
         <div class="conjunto">
             <input type="text" id="nomeResponsavel" placeholder="Nome do Responsável" class="input">
             <button class="botaomanipulacao" onclick="gerarPdf()">Gerar PDF</button>

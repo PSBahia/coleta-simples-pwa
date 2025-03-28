@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>Coleta de Dados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <input type="text" id="localidade" placeholder="Localidade">
+        <input type="text" id="localidade" placeholder="Localidade" required>
         <input type="text" id="quarteirao" placeholder="Quarteirão">
         <input type="text" id="nomeRua" placeholder="Nome da Rua">
         <input type="text" id="numeroImovel" placeholder="Número do Imóvel">
@@ -23,14 +24,17 @@
             <option value="F">Pendente</option>
         </select>
         <label><input type="checkbox" id="inspecionado">Inspecionado</label>
-        <input type="number" id="a1" placeholder="A1">
-        <input type="number" id="a2" placeholder="A2">
-        <input type="number" id="b" placeholder="B">
-        <input type="number" id="c" placeholder="C">
-        <input type="number" id="d1" placeholder="D1">
-        <input type="number" id="d2" placeholder="D2">
-        <input type="number" id="e" placeholder="E">
-        <input type="number" id="eliminados" placeholder="Eliminados">
+        <div class="group">
+            <input type="number" id="a1" placeholder="A1">
+            <input type="number" id="a2" placeholder="A2">
+            <input type="number" id="b" placeholder="B">
+            <input type="number" id="c" placeholder="C">
+            <input type="number" id="d1" placeholder="D1">
+            <input type="number" id="d2" placeholder="D2">
+            <input type="number" id="e" placeholder="E">
+            <input type="number" id="eliminados" placeholder="Eliminados">
+        </div>
+        <label><input type="checkbox" id="inspecionado">Amostra coletada</label>
         <input type="number" id="quantidadeAmostras" placeholder="Quantidade de Amostras">
         <input type="number" id="numeroAmostraInicial" placeholder="Número Amostra Inicial">
         <input type="number" id="numeroAmostraFinal" placeholder="Número Amostra Final">
@@ -38,7 +42,7 @@
         <input type="number" id="quantidadeLarvicida" placeholder="Quantidade de Larvicida">
         <input type="number" id="quantidadeDepositosTratados" placeholder="Quantidade de Depósitos Tratados">
         <button onclick="salvarDados()">Salvar</button>
-        <a href="../lista-dados/index.html">ver dados</a>
+        <a href="../lista-dados/index.html">Ver imóveis cadastrados</a>
     </div>
     <script src="script.js"></script>
 </body>
