@@ -3,7 +3,7 @@ const baseUrl = self.location.origin; // Obtém o domínio base
 self.addEventListener('install', (event) => {
     console.log('Service Worker: Instalando...');
     event.waitUntil(
-        caches.open('app-cache-v2').then((cache) => {
+        caches.open('app-cache-v2.1').then((cache) => {
             console.log('Service Worker: Adicionando arquivos ao cache');
             return cache.addAll([
                 baseUrl + '/',
