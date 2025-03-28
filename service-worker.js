@@ -1,30 +1,32 @@
+const baseUrl = self.location.origin; // Obtém o domínio base
+
 self.addEventListener('install', (event) => {
     console.log('Service Worker: Instalando...');
     event.waitUntil(
         caches.open('app-cache-v2').then((cache) => {
             console.log('Service Worker: Adicionando arquivos ao cache');
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/styles.css',
-                '/app.js',
-                '/manifest.json',
-                '/icons/icon-192x192.png',
-                '/icons/icon-512x512.png',
-                '/nao-dengue.jpg',
-                '/service-worker.js',
-                '/coleta-dados/index.html',
-                '/coleta-dados/script.js',
-                '/coleta-dados/styles.css',
-                '/editar-dados/index.html',
-                '/editar-dados/script.js',
-                '/editar-dados/styles.css',
-                '/Home/index.html',
-                '/Home/script.js',
-                '/Home/style.css',
-                '/lista-dados/index.html',
-                '/lista-dados/script.js',
-                '/lista-dados/styles.css',
+                baseUrl + '/',
+                baseUrl + '/index.html',
+                baseUrl + '/styles.css',
+                baseUrl + '/app.js',
+                baseUrl + '/manifest.json',
+                baseUrl + '/icons/icon-192x192.png',
+                baseUrl + '/icons/icon-512x512.png',
+                baseUrl + '/nao-dengue.jpg',
+                baseUrl + '/service-worker.js',
+                baseUrl + '/coleta-dados/index.html',
+                baseUrl + '/coleta-dados/script.js',
+                baseUrl + '/coleta-dados/styles.css',
+                baseUrl + '/editar-dados/index.html',
+                baseUrl + '/editar-dados/script.js',
+                baseUrl + '/editar-dados/styles.css',
+                baseUrl + '/Home/index.html',
+                baseUrl + '/Home/script.js',
+                baseUrl + '/Home/style.css',
+                baseUrl + '/lista-dados/index.html',
+                baseUrl + '/lista-dados/script.js',
+                baseUrl + '/lista-dados/styles.css',
             ]).catch((error) => {
                 console.error('Erro ao adicionar ao cache:', error);
             });
