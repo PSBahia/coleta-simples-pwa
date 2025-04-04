@@ -3,8 +3,8 @@
   "short_name": "Coleta",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4CAF50",
+  "background_color": "#ddeeff",
+  "theme_color": "#ddeeff",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
