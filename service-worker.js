@@ -1,9 +1,10 @@
 const baseUrl = self.location.origin; // Obtém o domínio base
+const versao = 
 
 self.addEventListener('install', (event) => {
     console.log('Service Worker: Instalando...');
     event.waitUntil(
-        caches.open('app-cache-v2.1').then((cache) => {
+        caches.open(versao).then((cache) => {
             console.log('Service Worker: Adicionando arquivos ao cache');
             return cache.addAll([
                 baseUrl + '/',
@@ -41,7 +42,7 @@ self.addEventListener('activate', (event) => {
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cache) => {
-                    if (cache !== 'app-cache-v2') {
+                    if (cache !== versao) {
                         console.log('Service Worker: Removendo cache antigo:', cache);
                         return caches.delete(cache);
                     }
