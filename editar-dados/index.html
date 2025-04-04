@@ -6,40 +6,48 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button style="background-color: red;" class="button" onclick="excluirItem()">Excluir</button>
     <div class="container">
-        <input type="hidden" id="id">
-        <input type="text" id="localidade" placeholder="Localidade">
-        <input type="text" id="quarteirao" placeholder="Quarteirão">
-        <input type="text" id="nomeRua" placeholder="Nome da Rua">
-        <input type="text" id="numeroImovel" placeholder="Número do Imóvel">
-        <select id="tipoImovel">
+        <input type="text" id="localidade" placeholder="Localidade" required>
+        <input type="text" id="quarteirao" placeholder="Quarteirão" required>
+        <input type="text" id="nomeRua" placeholder="Nome da Rua" required>
+        <input type="text" id="numeroImovel" placeholder="Número do Imóvel" required>
+        <select id="tipoImovel" required>
             <option value="R">Residência</option>
             <option value="C">Comércio</option>
             <option value="TB">Terreno Baldio</option>
             <option value="PE">Ponto Estratégico</option>
             <option value="O">Outros</option>
         </select>
-        <select id="tipoVisita">
+        <select id="tipoVisita" required>
             <option value="N">Normal</option>
             <option value="R">Recuperada</option>
             <option value="F">Pendente</option>
         </select>
         <label><input type="checkbox" id="inspecionado">Inspecionado</label>
-        <input type="number" id="a1" placeholder="A1">
-        <input type="number" id="a2" placeholder="A2">
-        <input type="number" id="b" placeholder="B">
-        <input type="number" id="c" placeholder="C">
-        <input type="number" id="d1" placeholder="D1">
-        <input type="number" id="d2" placeholder="D2">
-        <input type="number" id="e" placeholder="E">
-        <input type="number" id="eliminados" placeholder="Eliminados">
-        <input type="number" id="quantidadeAmostras" placeholder="Quantidade de Amostras">
-        <input type="number" id="numeroAmostraInicial" placeholder="Número Amostra Inicial">
-        <input type="number" id="numeroAmostraFinal" placeholder="Número Amostra Final">
+        <div class="group" id="inspecionadoFields" style="display: none;">
+            <input type="number" id="a1" placeholder="A1">
+            <input type="number" id="a2" placeholder="A2">
+            <input type="number" id="b" placeholder="B">
+            <input type="number" id="c" placeholder="C">
+            <input type="number" id="d1" placeholder="D1">
+            <input type="number" id="d2" placeholder="D2">
+            <input type="number" id="e" placeholder="E">
+            <input type="number" id="eliminados" placeholder="Eliminados">
+        </div>
+        <label><input type="checkbox" id="amostraColetada">Amostra coletada</label>
+        <div id="amostraFields" style="display: none;">
+            <input type="number" id="quantidadeAmostras" placeholder="Quantidade de Amostras">
+            <input type="number" id="numeroAmostraInicial" placeholder="Número Amostra Inicial">
+            <input type="number" id="numeroAmostraFinal" placeholder="Número Amostra Final">
+        </div>
         <label><input type="checkbox" id="tratado">Tratado</label>
-        <input type="number" id="quantidadeLarvicida" placeholder="Quantidade de Larvicida">
-        <input type="number" id="quantidadeDepositosTratados" placeholder="Quantidade de Depósitos Tratados">
-        <button onclick="salvarAlteracoes()">Salvar Alterações</button>
+        <div id="tratadoFields" style="display: none;">
+            <input type="number" id="quantidadeLarvicida" placeholder="Quantidade de Larvicida">
+            <input type="number" id="quantidadeDepositosTratados" placeholder="Quantidade de Depósitos Tratados">
+        </div>
+        <button onclick="salvarAlteracoes()">Salvar</button>
+        <a href="../lista-dados/index.html">Ver imóveis cadastrados</a>
     </div>
     <script src="script.js"></script>
 </body>

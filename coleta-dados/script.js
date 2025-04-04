@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const inspecionadoCheckbox = document.getElementById('inspecionado');
+    const amostraCheckbox = document.getElementById('amostraColetada');
+    const amostraFields = document.getElementById('amostraFields');
+    const tratadoCheckbox = document.getElementById('tratado');
+    const tratadoFields = document.getElementById('tratadoFields');
+    const group = document.querySelector('.group');
+
+    inspecionadoCheckbox.addEventListener('change', () => {
+        group.style.display = inspecionadoCheckbox.checked ? 'flex' : 'none';
+    });
+
+    amostraCheckbox.addEventListener('change', () => {
+        amostraFields.style.display = amostraCheckbox.checked ? 'block' : 'none';
+    });
+
+    tratadoCheckbox.addEventListener('change', () => {
+        tratadoFields.style.display = tratadoCheckbox.checked ? 'block' : 'none';
+    });
+});
+
+
 function salvarDados() {
     const localidade = document.getElementById('localidade').value;
     const quarteirao = document.getElementById('quarteirao').value;
@@ -48,8 +70,17 @@ function salvarDados() {
         data: new Date().toISOString()
     };
 
-    dadosColetados.push(novoDado);
-    localStorage.setItem('dadosColetados', JSON.stringify(dadosColetados));
-    alert('Dados salvos com sucesso!');
-    window.location.href = '../lista-dados/index.html'; // Redireciona para a lista de dados
+    if (localidade == "" || quarteirao == "" || numeroImovel == ""){
+        alert("Preencha todos os campos obrigatorios")
+        return
+    }
+    else{
+        dadosColetados.push(novoDado);
+        localStorage.setItem('dadosColetados', JSON.stringify(dadosColetados));
+        alert('Dados salvos com sucesso!');
+        window.location.href = '../lista-dados/index.html'; // Redireciona para a lista de dados
+    }
+   
 }
+
+
