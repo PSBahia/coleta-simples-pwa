@@ -1,5 +1,5 @@
 const baseUrl = self.location.origin; // Obtém o domínio base
-const versao = 
+const versao = '2.1.3'
 
 self.addEventListener('install', (event) => {
     console.log('Service Worker: Instalando...');

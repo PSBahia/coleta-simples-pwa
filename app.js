@@ -84,3 +84,4 @@ checkinButton.addEventListener('click', () => {
         alert('Geolocalização não suportada neste navegador.');
     }
 });
+

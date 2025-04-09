@@ -5,6 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const tratadoCheckbox = document.getElementById('tratado');
     const tratadoFields = document.getElementById('tratadoFields');
     const group = document.querySelector('.group');
+    const localidadeInput = document.getElementById('localidade');
+    const quarteiraoInput = document.getElementById('quarteirao');
+    const nomeRuaInput = document.getElementById('nomeRua');
+
+    // Recupera os valores armazenados no localStorage, se existirem
+    const localidadeSalva = localStorage.getItem('localidadeSalva');
+    const quarteiraoSalvo = localStorage.getItem('quarteiraoSalvo');
+    const nomeRuaSalva = localStorage.getItem('nomeRuaSalva');
+
+    // Preenche os campos com os valores recuperados
+    if (localidadeSalva) {
+        localidadeInput.value = localidadeSalva;
+    }
+    if (quarteiraoSalvo) {
+        quarteiraoInput.value = quarteiraoSalvo;
+    }
+    if (nomeRuaSalva) {
+        nomeRuaInput.value = nomeRuaSalva;
+    }
 
     inspecionadoCheckbox.addEventListener('change', () => {
         group.style.display = inspecionadoCheckbox.checked ? 'flex' : 'none';
@@ -27,6 +46,7 @@ function salvarDados() {
     const numeroImovel = document.getElementById('numeroImovel').value;
     const tipoImovel = document.getElementById('tipoImovel').value;
     const tipoVisita = document.getElementById('tipoVisita').value;
+    const habitantes = document.getElementById('habitantes').value;
     const inspecionado = document.getElementById('inspecionado').checked;
     const a1 = document.getElementById('a1').value;
     const a2 = document.getElementById('a2').value;
@@ -52,6 +72,7 @@ function salvarDados() {
         numeroImovel,
         tipoImovel,
         tipoVisita,
+        habitantes,
         inspecionado,
         a1,
         a2,
@@ -77,10 +98,14 @@ function salvarDados() {
     else{
         dadosColetados.push(novoDado);
         localStorage.setItem('dadosColetados', JSON.stringify(dadosColetados));
+
+        // Armazena os valores de localidade, quarteirão e nomeRua no localStorage
+        localStorage.setItem('localidadeSalva', localidade);
+        localStorage.setItem('quarteiraoSalvo', quarteirao);
+        localStorage.setItem('nomeRuaSalva', nomeRua);
+
         alert('Dados salvos com sucesso!');
         window.location.href = '../lista-dados/index.html'; // Redireciona para a lista de dados
     }
-   
+
 }
-
-

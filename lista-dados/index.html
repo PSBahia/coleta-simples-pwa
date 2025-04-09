@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>Lista de Dados</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -48,8 +51,10 @@
                         <th>Qua.</th>
                         <th>Rua</th>
                         <th>Nº</th>
+                        <th>Editar</th>
                         <th>Imóvel</th>
                         <th>Visita</th>
+                        <th>Hab</th>
                         <th>Insp.</th>
                         <th>A1</th>
                         <th>A2</th>
@@ -66,7 +71,7 @@
                         <th>Trat.</th>
                         <th>Qtd Larv.</th>
                         <th>Qtd.Dep.Trat.</th>
-                        <th>Ações</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -74,12 +79,16 @@
                 <tfoot></tfoot>
             </table>
         </div>
+        <input type="text" id="nomeResponsavel" placeholder="Nome do Responsável" class="input">
         <div class="conjunto">
-            <input type="text" id="nomeResponsavel" placeholder="Nome do Responsável" class="input">
-            <button class="botaomanipulacao" onclick="gerarPdf()">Gerar PDF</button>
+            
+            <button class="botaomanipulacao" onclick="gerarPdf()">Gerar PDF Completo</button>
+            <button class="botaomanipulacao" onclick="gerarPdfResumo()">Gerar PDF Resumo</button>
         </div>
-        <a href="../coleta-dados/index.html" class="btn2">Cadastrar Novo Imóvel</a>
-    </div>
+        <!--<a class="btnLink" href="../coleta-dados/index.html" class="btn2">Cadastrar Novo Imóvel</a>
+        </div>-->
+        <a href="/coleta-dados/index.html"><div class="add"><span>+</span></div></a></div>
+            
     <script src="script.js"></script>
 </body>
 </html>

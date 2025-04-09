@@ -14,7 +14,7 @@ body{
 }
 
 input, select{
-    max-width: 150px;
+    max-width: 200px;
 }
 
 .group {
@@ -30,21 +30,21 @@ input, select{
 }
 
 button{
-    background-color: rgb(53, 53, 160);
+    background-color: #3643cf;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 16px;
     border: none;
 }
 
 a{
-    border: 1px solid rgb(53, 53, 160);
+    border: 1px solid #3643cf;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 7px;
     text-decoration: none;
     font-size: 16px;
-    color: rgb(53, 53, 160);
+    color: #3643cf;
 }
 
 @media (max-width: 600px) {
